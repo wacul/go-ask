@@ -2,15 +2,19 @@ package gask
 
 import (
 	"fmt"
-
-	"github.com/wacul/ptr"
 )
 
 // Yes : Trueを返す
-func Yes(string) *bool { return ptr.Bool(true) }
+func Yes(string) *bool {
+	v := true
+	return &v
+}
 
 // No : Falseを返す
-func No(string) *bool { return ptr.Bool(false) }
+func No(string) *bool {
+	v := false
+	return &v
+}
 
 var defaultBehaviors = Behaviors{
 	"y":   Yes,
